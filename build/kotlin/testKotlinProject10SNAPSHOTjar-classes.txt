@@ -1,0 +1,1 @@
+/home/xrups/projects/testKotlinProject/build/classes/kotlin/main/MainTestClassKt.class
