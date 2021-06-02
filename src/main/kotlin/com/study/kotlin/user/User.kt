@@ -1,3 +1,10 @@
 package com.study.kotlin.user
 
-class User(val firstName: String, val lastName: String)
+data class User(
+    val firstName: String,
+    val lastName: String
+) {
+    override fun toString(): String {
+        return "User[firstName: $firstName, lastName: $lastName]"
+    }
+}
