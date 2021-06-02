@@ -16,11 +16,13 @@ class UserRestController(
 
     @PostMapping("/add")
     fun addUser(
-        @RequestBody user: User
+        @RequestBody userDto: UserDto
     ) {
-        val user = User(user.id, user.firstName, user.lastName)
+        val userDtoFromFront = UserDto(userDto.firstName, userDto.lastName)
+        val user = User(userDtoFromFront.firstName, userDtoFromFront.lastName);
         userService.addUser(user)
         println("Вызвали контроллер для создания пользователя.")
+        println("Пользователь: $user")
     }
 
 }

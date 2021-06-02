@@ -9,7 +9,7 @@ import javax.persistence.Id
 data class User(
 
     @Id
-    val id: String = UUID.randomUUID().toString(),
+    val id: String,
 
     @Column(name = "first_name")
     val firstName: String,
@@ -19,8 +19,14 @@ data class User(
 
 ) {
 
+    constructor(firstName: String, lastName: String) : this(
+        id = UUID.randomUUID().toString(),
+        firstName,
+        lastName
+    )
+
     override fun toString(): String {
-        return "User[firstName: $firstName, lastName: $lastName]"
+        return "User[id: $id, firstName: $firstName, lastName: $lastName]"
     }
 
 }
