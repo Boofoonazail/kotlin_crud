@@ -18,11 +18,7 @@ class UserRestController(
     fun addUser(
         @RequestBody userDto: UserDto
     ) {
-        val userDtoFromFront = UserDto(userDto.firstName, userDto.lastName)
-        val user = User(userDtoFromFront.firstName, userDtoFromFront.lastName);
-        userService.addUser(user)
-        println("Вызвали контроллер для создания пользователя.")
-        println("Пользователь: $user")
+        userService.addUser(userDto)
     }
 
 }
