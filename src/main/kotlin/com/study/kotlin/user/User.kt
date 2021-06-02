@@ -1,4 +1,3 @@
 package com.study.kotlin.user
 
-class User {
-}
+class User(val firstName: String, val lastName: String)
