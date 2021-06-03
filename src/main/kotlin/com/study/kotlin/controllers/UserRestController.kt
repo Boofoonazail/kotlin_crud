@@ -2,10 +2,7 @@ package com.study.kotlin.controllers
 
 import com.study.kotlin.service.UserService
 import com.study.kotlin.user.User
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 
 @RestController
@@ -19,6 +16,18 @@ class UserRestController(
         @RequestBody userDto: UserDto
     ) {
         userService.addUser(userDto)
+    }
+
+
+    @GetMapping("/name/{firstName}")
+    @ResponseBody
+    fun getUsersByName(
+        @PathVariable("firstName") firstName: String
+    ) : List<User>
+    {
+        val usersList: List<User> = userService.getUsersByName(firstName)
+        println("Получен пользователь: $usersList")
+        return usersList
     }
 
 }

@@ -19,4 +19,8 @@ class UserService(
         userRepository.save(user)
     }
 
+    fun <User> getUsersByName(firstName: String): List<User> {
+        return userRepository.findByFirstName(firstName)
+    }
+
 }
