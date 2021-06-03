@@ -23,4 +23,8 @@ class UserService(
         return userRepository.findByFirstName(firstName)
     }
 
+    fun deleteUserById(id: String) {
+        userRepository.deleteById(id)
+    }
+
 }

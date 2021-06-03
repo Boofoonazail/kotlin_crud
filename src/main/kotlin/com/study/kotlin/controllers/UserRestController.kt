@@ -30,4 +30,12 @@ class UserRestController(
         return usersList
     }
 
+    @DeleteMapping("/delete/{id}")
+    fun deleteUserById(
+        @PathVariable("id") id: String
+    ) {
+        println("Получен запрос на удаление пользователя по идентификтаору: $id")
+        userService.deleteUserById(id)
+    }
+
 }
