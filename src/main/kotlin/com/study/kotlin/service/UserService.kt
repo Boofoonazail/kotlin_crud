@@ -27,4 +27,8 @@ class UserService(
         userRepository.deleteById(id)
     }
 
+    fun updateUserById(id: String, userDto: UserDto) {
+        userRepository.save(User(id, userDto.firstName, userDto.lastName))
+    }
+
 }

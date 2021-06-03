@@ -38,4 +38,13 @@ class UserRestController(
         userService.deleteUserById(id)
     }
 
+    @PutMapping("/update/{id}")
+    fun updateUserById(
+        @PathVariable("id") id: String,
+        @RequestBody userDto: UserDto
+    ) {
+        println("Вызван контроллер для модификации пользователя по идентификатору: '$id' - [User: $userDto]")
+        userService.updateUserById(id,userDto)
+    }
+
 }
